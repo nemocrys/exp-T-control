@@ -1,0 +1,11 @@
+[Name Legend]
+AD1:		Pt100 Ada. Filz
+AD2:		Pt100 Ada. Alu. Behälter
+AD3:		Pt100 Ada. Filz Oberfläche
+PyroKw:		Py-Kurzwellig
+PyroKw2:	Py-Kurzwellig Quotien.
+PyroLw:		Py-Langwellig AV: 20:1
+PyroLw2:	Py-Langwellig AV: 10:1	
+
+[Vergleich]
+Sensor:		AD3

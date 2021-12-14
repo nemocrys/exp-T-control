@@ -1,0 +1,10 @@
+*.pyc
+/Bilder_und_Daten/*
+*.log
+*Config_Rezept*
+Configurationen.txt
+Test Langzeit.txt
+Init_Device.txt
+Messreihe_Rezept.txt
+*.db
+/.vscode/*

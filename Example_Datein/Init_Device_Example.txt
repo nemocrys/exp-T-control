@@ -1,0 +1,5 @@
+[Device]
+Heizplatte: 	/dev/ttyUSB0
+Pyro.Kw: 	/dev/ttyUSB1
+Pyro.LW: 	/dev/ttyACM0
+Pyro.Kw2:	/dev/ttyUSB2

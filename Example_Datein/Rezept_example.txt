@@ -1,0 +1,14 @@
+[Heating]
+zy0: Solltemperatur,Zugelassener Regelbereich,Zeit
+zy1: 150,0.5,20
+zy2: 200,0.5,20
+zy3: 250,0.5,20
+zy4: 300,0.5,20
+zy5: 250,0.5,20
+zy6: 200,0.5,20
+zy7: 150,0.5,20
+zy8: 100,0.5,20
+zy9: 50,0.5,20
+
+
+
