@@ -1,11 +1,12 @@
 # exp-T-control
-Scripts for temperature control.
+Scripts for controlling heating devices and temperature sensors.
 
-## <u>1. About Us:</u>
 This project is used to determine the emissivity of various materials. With the help of the pyrometer and the PT100 that are connected to the Adafruit, the emissivity should be determined. The PT1000 that is connected to the heating plate serves as a control sensor for the heating plate. 
 
-The project is being processed by the model experiments group at the IKZ - Leibniz Institut für Kristallzüchtung.
+The project is being processed by the Leibniz Institute for Crystal Growth (IKZ) and the [Model experiments group](https://www.ikz-berlin.de/en/research/materials-science/section-fundamental-description-1).
 In particular by Dr. Pal, Josef and Funke, Vincent. 
+
+See [this repository](https://github.com/nemocrys/exp-T-control-v2) for an updated version with further documentation.
 
 ---
 ## <u> 2. Introduction: </u> 
@@ -559,4 +560,11 @@ https://pythonprogramming.altervista.org/png-to-gif/?doing_wp_cron=1634728204.56
 The picture by __Our wiring__ was put together from different pictures with paint:
 1. Adafruit max31865 - https://learn.adafruit.com/adafruit-max31865-rtd-pt100-amplifier/python-circuitpython   
 2. Bread-Board and Raspberry Pi 400 Pins - https://cdn-reichelt.de/documents/datenblatt/A300/BEGINNERSGUIDE-4THED-GER_V2.pdf (S. 121 & 133)
-3. Legend and pin assignment - https://de.pinout.xyz/#  
+3. Legend and pin assignment - https://de.pinout.xyz/#
+
+## Acknowledgements
+
+[This project](https://nemocrys.github.io/) has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement No 851768).
+
+<img src="https://github.com/nemocrys/test-cz-induction/blob/main/EU-ERC.png">
+
