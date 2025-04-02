@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/438305129.svg)](https://doi.org/10.5281/zenodo.15127492)
+
 # exp-T-control
 Scripts for controlling heating devices and temperature sensors.
 
