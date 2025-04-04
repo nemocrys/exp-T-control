@@ -1,11 +1,12 @@
 # exp-T-control
-Scripts for temperature control.
+Skripte zur Steuerung von Heizgeräten und Temperatursensoren.
 
-## <u>1. Über uns:</u>
-In diesem Projekt wird der Emissionsgrad verschiedener Materialien bestimmt. Mit Hilfe des Pyrometers und des PT100, die an die Adafruit angeschlossen sind, soll der Emissionsgrad bestimmt werden. Der an die Heizplatte angeschlossene PT1000 dient als Kontrollfühler für die Heizplatte.
+Dieses Projekt dient der Bestimmung des Emissionsgrades verschiedener Materialien. Mithilfe des Pyrometers und des PT100, die an Adafruit angeschlossen sind, soll der Emissionsgrad ermittelt werden. Der an die Heizplatte angeschlossene PT1000 dient als Steuersensor für die Heizplatte.
 
-Das Projekt wird von der Gruppe Modellexperimente am IKZ - Leibniz Institut für Kristallzüchtung bearbeitet.
-Insbesondere von Dr. Pal, Josef und Funke, Vincent. 
+Das Projekt wird vom Leibniz-Institut für Kristallzüchtung (IKZ) und der [Arbeitsgruppe Modellexperimente](https://www.ikz-berlin.de/forschung-lehre/materialwissenschaften/sektion-fundamentale-beschreibung) bearbeitet.
+Insbesondere von Dr. Pal, Josef und Funke, Vincent.
+
+Eine aktualisierte Version mit weiterer Dokumentation finden Sie in [diesem Repository](https://github.com/nemocrys/exp-T-control-v2).
 
 ---
 ## <u>2. Einführung:</u>    
