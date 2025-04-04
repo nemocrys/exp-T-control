@@ -11,7 +11,7 @@ In particular by Dr. Pal, Josef and Funke, Vincent.
 See [this repository](https://github.com/nemocrys/exp-T-control-v2) for an updated version with further documentation.
 
 ---
-## <u> 2. Introduction: </u> 
+## <u> 1. Introduction: </u> 
 
 __Device programs:__
 
@@ -65,7 +65,7 @@ The "* Emis.txt" is available once for a recipe and for a manual adjustment.
 
 ---
 
-## 3. Operation manual:        
+## 2. Operation manual:        
 __Heating plate:__                     
 https://www.ika.com/de/Produkte-Lab-Eq/Magnetruehrer-Heizruehrer-Laborruehrer-Ruehrer-csp-188/C-MAG-HS-7-control-Downloads-cpdl-20002694/             
 On the side you can find the instruction manual in different languages.
@@ -76,15 +76,15 @@ in English
 
 ---
 
-## <u>4. To the heating plate:</u>   
-### <u>4.1. Set the safety temperature:</u>         
+## <u>3. To the heating plate:</u>   
+### <u>3.1. Set the safety temperature:</u>         
 * to the left of the on / off switch
 * A screwdriver (or similar) is required
 * Adjustment range:  100 °C ... 650 °C       
 -> The target temperature has a maximum size at certain safety temperatures (e.g. at 100 ° C the device only allows 50 ° C, regardless of what is sent to the device !!)        
 -> See on the display of the device what is maximally possible !!
                
-### <u>4.2. Adjust controller:</u>    
+### <u>3.2. Adjust controller:</u>    
 * possible controllers 
     * PID
     * 2P - Two-point controller       
@@ -95,7 +95,7 @@ in English
         -> when the display flashes, turn the rotary selector until the desired controller appears on the display      
         -> To enter, press the rotary knob again and press the symbol with the wrench to exit         
 
-### <u>4.3. Existing functions:</u>        
+### <u>3.3. Existing functions:</u>        
 1. Ask for values:
 <pre>
     * Device names                           -->     IN_NAME\r\n
@@ -110,7 +110,7 @@ in English
     * Stop the heating                       -->     STOP_1\r\n
     * Start the heating                      -->     START_1\r\n
 </pre>     
-### <u>4.4. Other possible functions of the heating plate - not used here for the time being - not in the program:</u>     
+### <u>3.4. Other possible functions of the heating plate - not used here for the time being - not in the program:</u>     
 1. Ask for values:
 <pre>
     * Actual speed value                     -->     IN_PV_4\r\n
@@ -128,15 +128,15 @@ in English
 
 ---
 
-## <u>5. To Adafruit and Raspberry Pi 400</u>    
+## <u>4. To Adafruit and Raspberry Pi 400</u>    
 
 Source: https://learn.adafruit.com/adafruit-max31865-rtd-pt100-amplifier/python-circuitpython     
 This page was used for testing and for the later finished program.    
 
-### <u>5.1. Installed:</u>
+### <u>4.1. Installed:</u>
 * sudo pip3 install adafruit-circuitpython-max31865
 
-### <u>5.2. Due to an error, the following was done:</u>            
+### <u>4.2. Due to an error, the following was done:</u>            
               
 __Error__:   
 platform.system(), package[0], package[1]
@@ -165,10 +165,10 @@ If that doesn't help:
     * Add the revision (if not already available) to your board and save the change!
     * Our Board: Raspberry Pi 400 
 
-### <u>5.3. Our wiring:</u>   
+### <u>4.3. Our wiring:</u>   
 <img src="Bilder/GPIO - 2.png" alt="GPIO" title="Wiring Adafruit max31865 to Raspberry Pi 400" />
 
-### <u>5.4. Libraries:</u>
+### <u>4.4. Libraries:</u>
 1. *import board*   
     * The CS-Pin (Chip Select) is indicated with D + GPIO number e.g. D16
 2. *import digitalio*   
@@ -188,10 +188,10 @@ If that doesn't help:
     https://learn.adafruit.com/adafruit-max31865-rtd-pt100-amplifier/python-circuitpython     
     https://learn.adafruit.com/adafruit-max31865-rtd-pt100-amplifier/rtd-wiring-config
 --- 
-## <u> 6. To the programs: </u>                
+## <u> 5. To the programs: </u>                
 The programming language used is Python. 
 
-### __6.1. The program *Hauptprogramm.py*:__
+### __5.1. The program *Hauptprogramm.py*:__
 The program manages everything:
 It creates the graphical interfaces and diagrams, it creates the various files and folders, it speaks to the devices and saves all of the measurement data. 
 
@@ -206,7 +206,7 @@ The program can be started normally from Python, Visual Studio Code or similar, 
 
 In the following chapters, the modes and the files created are explained. 
 
-#### <u> 6.1.1. What can the program do: </u>    
+#### <u> 5.1.1. What can the program do: </u>    
 1. Creates a button interface with buttons, input fields and selection boxes
 
 <img src="Bilder/GUI-anderer_Bildschirm.png" alt="GUI" title="Grapfisches User Interface" />
@@ -253,7 +253,7 @@ In the following chapters, the modes and the files created are explained.
 21. If the graphic is not updated live and the recipe is over, a new diagram is created with all measurement data inside, this is saved in addition to the frozen image.
 22. There is a configuration file that specifies, for example, names for legends and etc. (see folder "Example_Files")   
 
-#### **6.1.2. Console input commands:**
+#### **5.1.2. Console input commands:**
 
 The following commands are entered in the console when the program is started. Combination of commands is possible. 
 
@@ -284,7 +284,7 @@ Example: python Hauptprogramm.py -cfg Textdatei.txt -nogra
 8. -log
     * With the command, the program logs certain events and others with a time stamp.    
 
-#### **6.1.3. cfg - Mode (recipe mode) :**         
+#### **5.1.3. cfg - Mode (recipe mode) :**         
 Heating recipes are processed in cfg mode. In this mode you can no longer change the emissivities and setpoint temperatures yourself.
 The program works through the temperature levels in the specified range and the length of time the temperature is maintained and at the same time determines the emissivity.
 
@@ -308,7 +308,7 @@ The following picture is intended to show a recipe flow, the picture fits the ex
 
 The picture was made into a gif with the help of a program from many individual pictures. In chapter 8.1. stands the source. The program for the creation was available from the source (the first program example on the page was used). In the program you can enter the speed of the picture change and the picture name. The file extension of the images used can also be set. But be careful - the pictures become a gif picture based on their name, so you have to pay attention to the file names. 
 
-#### **6.1.4. Manual mode:**    
+#### **5.1.4. Manual mode:**    
 The manual mode is started simply with __"python.\Hauptrogramm.py"__ in the console window (but it depends on the console) or via the start button in the programming environment.
 
 The adaptation/ comparison of the temperatures and the determination of the emissivity is started with the "Anpassung"-button. Since no recipe is read in in the background here, the temperature of the Pt1000 of the heating plate is entered as the target temperature, since the measurement can take place at any time.
@@ -317,7 +317,7 @@ The same diagrams and files are created in both modes. In addition, the emissivi
 
 If the comparison device is missing or not selected, the Pt1000 of the heating plate will take over the role (in both modes). The reason for this is that this sensor and the internal heating plate sensor are always included in the program. In chapter 6.1.1. point 20 also explains something about the appearance of the diagrams for certain selections. 
 
-#### **6.1.5. Files created:** 
+#### **5.1.5. Files created:** 
 In total, the program creates three text files and one or two PNG files (unless you create between saved images). 
 
 The files always begin with the date and then an index (# digit).  
@@ -341,10 +341,10 @@ You can see such a picture below, this picture was created during a recipe.
 
 <img src="Bilder/Beispiel_Bild.png" alt="Grafik" title="cfg-mode">
 
-### 6.2. Evaluation programs: 
+### 5.2. Evaluation programs: 
 In all the programs the checkbox function of "from matplotlib.widgets import CheckButtons" is used. The source for this programming can be found in chapter 8.1. This means that curves can be made invisible. 
 
-#### __6.2.1. The program *Daten_Einlesen.py*:__         
+#### __5.2.1. The program *Daten_Einlesen.py*:__         
 The program can be used to convert the data created by the **Hauptprogramm.py** back into a graphic.
 Hauptprogramm.py creates a folder with the name "Bilder_und_Daten" and then sub-folders by date.
 In this program you have to enter the name of the file and the folder name interactively.
@@ -375,7 +375,7 @@ Example Pictures:
 <img src="Bilder/Daten_Einlesen_1.png" alt="Grafik" title="Temperature curves of the measurement series" width=330>
 <img src="Bilder/Daten_Einlesen_2.png" alt="Grafik" title="Emissivity curves of the measurement series" width=330>
 
-#### __6.2.2. The program *Vergleiche_Temp_Kurven.py*:__
+#### __5.2.2. The program *Vergleiche_Temp_Kurven.py*:__
 
 The program can be used to compare the temperature curves with one another.
 You can specify any number of curves. However, with too many curves the diagram can become confusing. The checkbox has a fixed position and can no longer be read if there are too many curves.
@@ -415,7 +415,7 @@ Example Picture:
 
 In the picture you can also see what happens in test mode. Every second random values are generated from a certain range. 
 
-#### __6.2.3. The program *Vergleiche_Emis_Kurven.py*:__
+#### __5.2.3. The program *Vergleiche_Emis_Kurven.py*:__
 
 The program can be used to compare the emissivities of different materials. There is a dictionary in the program that contains the material and the path. Besides entering the path there, you only need to start the program.  
 
@@ -425,7 +425,7 @@ The program reads the following files:
 Example Picture:     
 <img src="Bilder/Vergleiche_Emis_Kurven.png" alt="Grafik" title="Comparison of many emissivity curves from different series of measurements" width=500> 
 
-#### __6.2.4. The program *Erstelle_Emis_Anpassung.py*:__ 
+#### __5.2.4. The program *Erstelle_Emis_Anpassung.py*:__ 
 
 The program can be used to create the lower right image of the live graphics. The course of the emissivities over time is shown here. The file path must be specified in the program!     
 
@@ -450,7 +450,7 @@ The program reads the following files:
 Example Picture:    
 <img src="Bilder/Erstelle_Emis_Anpassung.png" alt="Grafik" title="Creation of the lower right diagram from the live plot" width=500> 
 
-#### __6.2.5. Summary__:
+#### __5.2.5. Summary__:
 
 Program                   | What is it doing?
 --------------------------|-------------------------------------------------------------------
@@ -460,7 +460,7 @@ Vergleiche_Temp_Kurven.py | Measurement series are read in and plotted against e
 Vergleiche_Emis_Kurven.py | Certain data are read in and then the emissivities are plotted against the temperature.   
 Erstelle_Emis_Anpassung.py| Generates the lower right image from the live plot.  
 
-### __6.3. Additional program - *Suche_Werte.py*:__    
+### __5.3. Additional program - *Suche_Werte.py*:__    
 
 The program should find the comparison temperatures for the emissivity adjustment in "* temp.txt". This must be because the old series of measurements in "* Emis_Ende.txt" only contained the target temperature and not the surface temperature that is used for comparison!    
 The program first looks in the "* Emis.txt" file for the times when the sixteenth emissivity adjustment took place. Then it looks for the times in the "* temp.txt" file and notes the surface / comparison temperature (here the temperature of the Adafruit 3). Finally the program reads the header and the values of the file "* Emis_Ende.txt" and inserts the header and the values into the file "* Emis_Ende_Korrekt.txt". This can then be read by the other programs like the other files.       
@@ -470,17 +470,17 @@ The file paths must be entered manually in the program and not via the console a
 The program only served as an aid and due to adjustments in the program, the program is no longer necessary.
 
 ---
-## <u>7. Problems:</u> 
-### <u>7.1. With Heating Plate:</u>
+## <u>6. Problems:</u> 
+### <u>6.1. With Heating Plate:</u>
 The heating plate occasionally sends back empty strings as measured values. These are already intercepted by the program and output in the console window with a time stamp. 
 In addition, it happened before a zero was returned during a series of measurements.     
 
 The operating instructions for the heating plate state that the Pt1000 of the heating plate can only be operated up to 350 °C. When we wanted to regulate the heating plate to 400 °C, the heating plate started to switch off at approx. 360 °C.
 
-### <u>7.2. With Pyrometer Lw:</u>
+### <u>6.2. With Pyrometer Lw:</u>
 It can happen that the pyrometer returns a "n.o" instead of a measured value. These are also intercepted and ignored.  
 
-### <u>7.3. With Plots and Raspberry Pi:</u>   
+### <u>6.3. With Plots and Raspberry Pi:</u>   
 To plot diagrams in Python you need the matplotlib and numpy libraries.   
 Unfortunately there are difficulties with the installation. For this reason I will explain here how I got it to run on the Raspberry Pi and where I got the information from.   
 
@@ -512,7 +512,7 @@ ImportError: numpy.core.multiarray failed to import
             Paket python-gobject-cairo ist nicht verfügbar, wird aber von einem anderen Paket referenziert. Das kann heißen, dass das Paket fehlt, dass es abgelöst wurde oder nur aus einer anderen Quelle verfügbar ist.
         * sudo apt-get install python-gi-cairo 
 
-### <u> 7.4. Other problems: </u>
+### <u> 6.4. Other problems: </u>
 There are other small problems in the program, but they have to do with the libraries and devices.
 
 1. Test mode:
@@ -531,8 +531,8 @@ There are other small problems in the program, but they have to do with the libr
 
 ---
 
-## <u>8. Sources:</u>
-### <u>8.1. Program sources:</u>
+## <u>7. Sources:</u>
+### <u>7.1. Program sources:</u>
 __Hauptprogramm.py__     
 Integrate the graphic or the diagram:             
 https://www.delftstack.com/de/howto/matplotlib/how-to-automate-plot-updates-in-matplotlib/         
@@ -558,7 +558,7 @@ __Animated picture:__
 The following page was used to create a gif image from several images:     
 https://pythonprogramming.altervista.org/png-to-gif/?doing_wp_cron=1634728204.5697550773620605468750
 
-### <u>8.2. Image sources:</u>   
+### <u>7.2. Image sources:</u>   
 The picture by __Our wiring__ was put together from different pictures with paint:
 1. Adafruit max31865 - https://learn.adafruit.com/adafruit-max31865-rtd-pt100-amplifier/python-circuitpython   
 2. Bread-Board and Raspberry Pi 400 Pins - https://cdn-reichelt.de/documents/datenblatt/A300/BEGINNERSGUIDE-4THED-GER_V2.pdf (S. 121 & 133)

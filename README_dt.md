@@ -9,7 +9,7 @@ Insbesondere von Dr. Pal, Josef und Funke, Vincent.
 Eine aktualisierte Version mit weiterer Dokumentation finden Sie in [diesem Repository](https://github.com/nemocrys/exp-T-control-v2).
 
 ---
-## <u>2. Einführung:</u>    
+## <u>1. Einführung:</u>    
 
 __Geräte Programme:__    
 
@@ -63,7 +63,7 @@ Die "*Emis.txt" gibt es einmal für ein Rezept und für eine Manuelle Anpassung.
 
 ---
 
-## 3. Bedienungsanleitungen:        
+## 2. Bedienungsanleitungen:        
 __Heizplatte:__                     
 https://www.ika.com/de/Produkte-Lab-Eq/Magnetruehrer-Heizruehrer-Laborruehrer-Ruehrer-csp-188/C-MAG-HS-7-control-Downloads-cpdl-20002694/             
 Auf der Seite finden Sie die Bedienungsanleitung in verschiedenen Sprachen.
@@ -74,15 +74,15 @@ in Englisch
 
 ---
 
-## 4. Zur Heizplatte:
-### 4.1. Sicherheitstemperatur einstellen:         
+## 3. Zur Heizplatte:
+### 3.1. Sicherheitstemperatur einstellen:         
 * links neben dem Ein-Aus-Schalter
 * Benötigt wird ein Schraubenzieher (oder ähnliches)
 * Bereich:  100 °C ... 650 °C       
 -> Solltemperatur hat bei bestimmten Sicherheitstemperaturen eine maximale Größe (z.B. bei 100 °C lässt das Gerät nur 50 °C zu egal was man dem Gerät sendet!!)      
 -> Siehe dafür auf das Display des Gerätes, was maximal möglich ist!!
             
-### 4.2. Regler einstellen:           
+### 3.2. Regler einstellen:           
 * Vor starten des Programms!!
 * Mögliche Regler 
     * PID
@@ -93,7 +93,7 @@ in Englisch
         -> wenn die Anzeige blinkt, Drehknopf drehen bis der gewünschte Regler auf dem Display erscheint      
         -> Zur Eingabe erneut den Drehknopf drücken und das Symbol mit dem Schraubenschlüssel zum Verlassen drücken          
 
-### 4.3. Vorhandene Funktionen:        
+### 3.3. Vorhandene Funktionen:        
 1. Werte Erfragen:        
 <pre>
     * Gerätenamen                       -->     IN_NAME\r\n
@@ -110,7 +110,7 @@ in Englisch
     * Stoppe die Heizung                -->     STOP_1\r\n
     * Starte die Heizung                -->     START_1\r\n
 </pre>     
-### 4.4. Weitere mögliche Funktionen der Heizplatte - hier Erstmal nicht gebraucht - Nicht im Programm:     
+### 3.4. Weitere mögliche Funktionen der Heizplatte - hier Erstmal nicht gebraucht - Nicht im Programm:     
 1. Erfragen:
 <pre>
     * Drehzahl Istwert                  -->     IN_PV_4\r\n
@@ -128,15 +128,15 @@ in Englisch
 
 ---
 
-## 5. Zu Adafruit und Raspberry Pi 400       
+## 4. Zu Adafruit und Raspberry Pi 400       
 
 Quelle: https://learn.adafruit.com/adafruit-max31865-rtd-pt100-amplifier/python-circuitpython     
 Diese Seite wurde zum Testen und für das spätere fertige Programm verwendet.   
 
-### 5.1. Installiert:
+### 4.1. Installiert:
 * sudo pip3 install adafruit-circuitpython-max31865
 
-### 5.2. Auf Grund eines Fehlers wurde folgendes getan:                       
+### 4.2. Auf Grund eines Fehlers wurde folgendes getan:                       
               
 Fehler:     
 platform.system(), package[0], package[1]
@@ -164,10 +164,10 @@ Wenn das nicht hilft:
     * Füge die Revision (wenn nicht schon vorhanden) bei deinem Board hinzu und speicher die Änderung!
     * Unser Board: Raspberry Pi 400 
 
-### 5.3. Unsere Verdrahtung:    
+### 4.3. Unsere Verdrahtung:    
 <img src="Bilder/GPIO - 2.png" alt="GPIO" title="Verdrahtung von Adafruit max31865 mit Raspberry Pi 400" />
 
-### 5.4. Bibliotheken:
+### 4.4. Bibliotheken:
 1. import board   
     * Der CS-Pin (Chip Select) wird mit D + GPIO Zahl angegeben z.B. D16
 2. import digitalio   
@@ -186,10 +186,10 @@ Wenn das nicht hilft:
     https://learn.adafruit.com/adafruit-max31865-rtd-pt100-amplifier/python-circuitpython     
     https://learn.adafruit.com/adafruit-max31865-rtd-pt100-amplifier/rtd-wiring-config
 --- 
-## <u>6. Zu den Programmen:</u>               
+## <u>5. Zu den Programmen:</u>               
 Die verwendete Programmsprache ist Python. 
 
-### 6.1. Das Programm *Hauptprogramm.py*:    
+### 5.1. Das Programm *Hauptprogramm.py*:    
 Das Programm verwaltet alles:    
 Es erzeugt die Grafischen Oberflächen und Diagramme, es erstellt die verschiedenen Files und Ordner, es spricht mit den Geräten und speichert die ganzen Messdaten.
 
@@ -203,7 +203,7 @@ Das Programm kann aus Python, Visual Studio Code oder ähnlichen normal gestarte
 
 In den Folgenden Kapiteln, werden die Modi und die erstellten Dateien erläutert.
 
-#### <u>6.1.1. Was kann das Programm alles machen:</u>   
+#### <u>5.1.1. Was kann das Programm alles machen:</u>   
 1. Erstellt eine Schaltoberfläche mit Knöpfen, Eingabefeldern und Auswahlboxen
 
 <img src="Bilder/GUI-anderer_Bildschirm.png" alt="GUI" title="Grafisches User Interface" />   
@@ -250,7 +250,7 @@ In den Folgenden Kapiteln, werden die Modi und die erstellten Dateien erläutert
 21. Wenn die Grafik nicht Live aktualisiert wird und das Rezept zu ende ist, wird ein neues Diagramm erstellt mit allen Messdaten drinnen, dies wird das zusätzlich zu dem Eingefrorenen Bild gespeichert.   
 22. Es gibt eine Konfigurationsdatei die z.B. Namen für Legenden und etc. vorgibt. (sehe Ordner "Example_Dateien")
 
-#### **6.1.2. Konsolen Eingabe Befehle:**    
+#### **5.1.2. Konsolen Eingabe Befehle:**    
 Die folgenden Befehl werden mit dem Start des Programms in der Konsole eingegeben. Kombination der Befehle sind möglich. 
 
 __Beispiel:__ python Hauptprogramm.py -cfg Textdatei.txt -nogra    
@@ -281,7 +281,7 @@ __Beispiel:__ python Hauptprogramm.py -cfg Textdatei.txt -nogra
 8. -log   
     * Mit dem Befehl loggt das Programm bestimmte Ereignisse und anderes mit Zeitstempel. 
 
-#### **6.1.3. cfg - Mode (Rezept-Modus):**    
+#### **5.1.3. cfg - Mode (Rezept-Modus):**    
 Im cfg-Modus werden Heizrezepte abgearbeitet. In diesem Modus kann man dann nicht mehr selber die Emissionsgrade und Solltemperaturen ändern. 
 Das Programm arbeitet die Temperaturstufen im angegebenen Bereich und der Länge des Haltens der Temperatur ab und bestimmt zugleich den Emissionsgrad. 
 
@@ -305,7 +305,7 @@ Das folgende Bild soll ein Ablauf eines Rezeptes zeigen, das Bild passt zum gera
 
 Das Bild wurde mithilfe eines Programms aus vielen einzelnen Bildern zu einen Gif gemacht. In Kapitel 8.1. steht die Quelle. Das Programm zur Erstellung stand aus der Quelle (das erste Programmbeispiel auf der Seite wurde genutzt). In dem Programm kann man die Geschwindigkeit des Bildwechsels und den Bildnamen eingeben. Die Dateiendung der verwendeten Bilder kann man auch einstellen. Aber Achtung - die Bilder werden anhand ihres Namens zu einen Gif Bild, mann muss die dateinamen also beachten.
 
-#### **6.1.4. Manueller-Modus:**    
+#### **5.1.4. Manueller-Modus:**    
 Den Manuellen Modus startet man einfach mit __"python .\Hauptprogramm.py"__ im Konsolenfenster (kommt aber auf die Konsole an) oder über den Start Knopf in der Programmierumgebung.    
 
 Die Anpassung/ der Vergleich der Temperaturen und die Bestimmung des Emissionsgrades wird durch den "Anpassung"-Knopf gestartet. Da hier aber kein Rezept im Hintergrund eingelesen wird, wird als Solltemperatur die Temperatur des Pt1000 der Heizplatte eingetragen, da die Messung zu jedem Zeitpunkt geschehen kann. 
@@ -314,7 +314,7 @@ In beiden Modi werden die selben Diagramme und Files erstellt. Zudem kann man im
 
 Sollte das Vergleichsgerät fehlen oder nicht ausgewählt worden sein, so wird der Pt1000 der Heizplatte die Rolle übernehmen (in beiden Modi). Der Grund dafür ist das dieser Sensor sowie der interne Heizplatten Sensor immer im Programm dabei sind. In Kapitel 6.1.1. im Punkt 20 wird auch etwas zu dem Erscheinen der Diagramme bei bestimmten Auswahlen erklärt. 
 
-#### **6.1.5. Erstellte Dateien:** 
+#### **5.1.5. Erstellte Dateien:** 
 Insgesamt erzeugt das Programm drei Textdateien und ein bis zwei PNG-Dateien (Außer man erzeugt sich zwischen gespeicherte Bilder).
 
 Die Dateien beginnen immer mit dem Datum und dann ein Index (# Ziffer).
@@ -338,10 +338,10 @@ Folgend kann man ein solches Bild sehen, dieses Bild wurde während eines Rezept
 
 <img src="Bilder/Beispiel_Bild.png" alt="Grafik" title="cfg-Modus">
 
-### 6.2. Auswertungsprogramme:
+### 5.2. Auswertungsprogramme:
 In all den Programmen wird die Checkbox Funktion von "from matplotlib.widgets import CheckButtons" genutzt. In Kapitel 8.1 kann man die Quelle für diese Programmierung finden. Dadurch kann man Kurven unsichtbar machen. 
 
-#### 6.2.1. Das Programm *Daten_Einlesen.py*:
+#### 5.2.1. Das Programm *Daten_Einlesen.py*:
 Mit dem Programm kann man die erstellten Daten vom **Hauptprogramm.py** wieder in eine Grafik umwandeln.   
 Hauptprogramm.py erstellt einen Ordner mit dem Namen "Bilder_und_Daten" und darin dann Unterordner nach Datum.
 In diesem Programm muss man dann interaktiv den Namen der Datei und den Ordner Namen eingeben. 
@@ -374,7 +374,7 @@ Beispiel Bilder:
 <img src="Bilder/Daten_Einlesen_1.png" alt="Grafik" title="Temperaturkurven der Messreihe" width=330>
 <img src="Bilder/Daten_Einlesen_2.png" alt="Grafik" title="Emissionsgradkurven der Messreihe" width=330>
 
-#### __6.2.2. Das Programm *Vergleiche_Temp_Kurven.py*:__
+#### __5.2.2. Das Programm *Vergleiche_Temp_Kurven.py*:__
 
 Mit dem Programm kann man die Temperaturkurven miteinander vergleichen.    
 Man kann beliebig viele Kurven angeben. Mit zu vielen Kurven kann das Diagramm aber unübersichtlich werden. Die Checkbox hat eine feste Position und ist bei zu vielen Kurven nicht mehr lesbar. 
@@ -414,7 +414,7 @@ Beispiel Bild:
 
 In dem Bild kann man zudem sehen was im Test-Modus geschieht. Es werden jede Sekunde zufällige Werte aus einen bestimmten Bereich generiert. 
 
-#### __6.2.3. Das Programm *Vergleiche_Emis_Kurven.py*:__
+#### __5.2.3. Das Programm *Vergleiche_Emis_Kurven.py*:__
 
 Mit dem Programm kann man die Emissionsgraden von verschiedenen Materialien Vergleichen. Im Programm gibt es ein Dictionarie, dass das Material und den Pfad beinhaltet. Außer den Pfad dort einzutragen brauch man nur das Programm zu starten.
 
@@ -424,7 +424,7 @@ Das Programm liest folgende Dateien ein:
 Beispiel Bild:     
 <img src="Bilder/Vergleiche_Emis_Kurven.png" alt="Grafik" title="Vergleich von vielen Emissionsgradkurven verschiedener Messreihen" width=500>  
 
-#### __6.2.4. Das Programm *Erstelle_Emis_Anpassung.py*:__ 
+#### __5.2.4. Das Programm *Erstelle_Emis_Anpassung.py*:__ 
 
 Mit dem Programm kann man sich das untere rechte Bild der Live-Grafik erstellen lassen. Hier wird der Verlauf der Emissionsgrade über die Zeit dargestellt. Der Datei Pfad muss im Programm angegeben werden!!
 
@@ -449,7 +449,7 @@ Das Programm liest folgende Dateien ein:
 Beispiel Bild:     
 <img src="Bilder/Erstelle_Emis_Anpassung.png" alt="Grafik" title="Erstellung vom rechten unteren Diagramm aus dem Live-Plot" width=500> 
 
-#### __6.2.5. Zusammenfassung__:
+#### __5.2.5. Zusammenfassung__:
 
 Programm                  | Was tut es?
 --------------------------|-------------------------------------------------------------------
@@ -459,7 +459,7 @@ Vergleiche_Temp_Kurven.py | Messreihen werden eingelesen und gegeneinander geplo
 Vergleiche_Emis_Kurven.py | Bestimmte Daten werden eingelesen und dann werden die Emissionsgrade über der Temperatur geplottet.
 Erstelle_Emis_Anpassung.py| Erzeugt das untere rechte Bild aus dem Live-Plot.
 
-### __6.3. Zusatz Programm - *Suche_Werte.py*:__   
+### __5.3. Zusatz Programm - *Suche_Werte.py*:__   
 Das Programm sollte die Vergleichstemperaturen für die Emissionsgradanpassung im "*temp.txt" finden. Dies muss es da alte Messreihen im "*Emis_Ende.txt" nur die Solltemperatur beinhalteten und nicht die Oberflächentemperatur die zum Vergleich dient!     
 Das Programm sucht zunächst in der "*Emis.txt" Datei nach den Zeiten, wann die sechzehnte Emissionsgradanpassung stattfand. Danach sucht es in der "*temp.txt" Datei nach den Zeiten und notiert sich die Oberflächen-/Vergleichstemperatur (hier die Temperatur vom Adafruit 3). Zuletzt liest das Programm den Kopf und die Werte der Datei "*Emis_Ende.txt" und fügt den Kopf und die Werte in die Datei "*Emis_Ende_Korrekt.txt". Diese kann dann wie die anderen Files von den anderen Programmen gelesen werden.
 
@@ -468,17 +468,17 @@ Die Dateipfade müssen per Hand im Programm und nicht über die Konsole eingegeb
 Das Programm diente nur als Hilfe und durch Anpassungen im Programm ist das Programm nicht mehr Notwendig.
 
 ---
-## <u>7. Probleme:</u> 
-### <u>7.1. Mit der Heizplatte:</u>
+## <u>6. Probleme:</u> 
+### <u>6.1. Mit der Heizplatte:</u>
 Die Heizplatte sendet ab und zu Leere Strings als Messwerte zurück. Diese werden vom Programm abgefangen (mit Zeitstempel) und ignoriert (das Programm pausiert für die Sekunde).  
 Zudem kam es auch schon vor das eine Null zurückgegeben wurde, während einer Messreihe.     
 
 In der Betriebsanleitung der Heizplatte steht, das der Pt1000 der Heizplatte nur bis zu 350 °C betreibbar ist. Als wir bei uns die Heizplatte auf 400 °C regeln wollten, begann die Heizplatte bei c. 360 °C sich abzuschalten.
 
-### <u>7.2. Mit Pyrometer Lw:</u>
+### <u>6.2. Mit Pyrometer Lw:</u>
 Es kann passieren das das Pyrometer ein "n.o" zurück gibt als Messwert. Diese werden auch abgefangen und ignoriert! 
 
-### <u>7.3. Mit Plots und Raspberry Pi:</u>   
+### <u>6.3. Mit Plots und Raspberry Pi:</u>   
 Um Diagramme zu plotten brauch man die Matplotlib und Numpy Bibliothek.
 Leider gibt es Schwierigkeiten bei der Installation. Aus diesem Grund erkläre ich hier, wie ich es auf dem Raspberry Pi zum Laufen gebracht habe und woher ich die Informationen habe.       
 
@@ -510,7 +510,7 @@ ImportError: numpy.core.multiarray failed to import
             Paket python-gobject-cairo ist nicht verfügbar, wird aber von einem anderen Paket referenziert. Das kann heißen, dass das Paket fehlt, dass es abgelöst wurde oder nur aus einer anderen Quelle verfügbar ist.
         * sudo apt-get install python-gi-cairo
 
-### <u>7.4. Weitere Probleme:</u>          
+### <u>6.4. Weitere Probleme:</u>          
 In dem Programm gibt es noch weitere kleine Probleme, die aber mit den Bibliotheken und Geräten zu tun haben. 
 
 1. Test-Modus:   
@@ -528,8 +528,8 @@ In dem Programm gibt es noch weitere kleine Probleme, die aber mit den Bibliothe
     Zudem können die Pyrometer so in unterschiedlicher Reihenfolge initialisiert werden, ohne das der Index geändert werden muss. Bei den Adafruit Pt100 ist dieses Verfahren bereits erprobt. Z.B. wenn man nur den dritten Adafruit in der Messung haben will, so wird der Index 2 diesem zugeordnet und das Programm kann die weiteren Befehle mit dem Index ausführen. Die ersten beiden Listen Plätze sind dann mit einer Null belegt und können später, wenn man ein weiteres haben will (nach Betätigung von Stop) mit eingefügt werden. 
 
 --- 
-## 8. Quellen:
-### 8.1. Programm-Quellen:
+## 7. Quellen:
+### 7.1. Programm-Quellen:
 __Hauptprogramm.py__    
 Um die Grafik bzw. das Diagramm einzubinden wurde die Quelle:                  
 https://www.delftstack.com/de/howto/matplotlib/how-to-automate-plot-updates-in-matplotlib/               
@@ -555,7 +555,7 @@ __Animiertes Bild:__
 Um aus mehreren Bildern ein Gif-Bild zumachen wurde folgende Seite genutzt:  
 https://pythonprogramming.altervista.org/png-to-gif/?doing_wp_cron=1634728204.5697550773620605468750
 
-### 8.2. Bild-Quellen:   
+### 7.2. Bild-Quellen:   
 Das Bild wurde aus verschiedenen Bildern mit paint zusammengefügt:
 1. Adafruit max31865 - https://learn.adafruit.com/adafruit-max31865-rtd-pt100-amplifier/python-circuitpython   
 2. Bread-Board und raspberry Pi 400 Pins - https://cdn-reichelt.de/documents/datenblatt/A300/BEGINNERSGUIDE-4THED-GER_V2.pdf (S. 121 & 133)
